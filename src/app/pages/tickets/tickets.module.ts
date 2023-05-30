@@ -1,0 +1,46 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TicketsRoutingModule } from './tickets-routing.module';
+import { TicketsComponent } from './tickets.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { AsideComponent } from './aside/aside.component';
+import { MenubarModule } from "primeng/menubar";
+import { DropdownModule } from "primeng/dropdown";
+import { FormsModule } from '@angular/forms';
+import { BlockStyleDirective } from "../../directive/block-style.directive";
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { SettingsModule } from "../settings/settings.module";
+import { ToastModule } from "primeng/toast";
+import { MessageService } from "primeng/api";
+import {OrdersModule} from "../orders/orders.module";
+
+
+@NgModule({
+  declarations: [
+    TicketsComponent,
+    HeaderComponent,
+    FooterComponent,
+    TicketListComponent,
+    AsideComponent,
+    BlockStyleDirective,
+  ],
+    imports: [
+        CommonModule,
+        TicketsRoutingModule,
+        MenubarModule,
+        DropdownModule,
+        FormsModule,
+        InputTextModule,
+        CalendarModule,
+        SettingsModule,
+        OrdersModule,
+        ToastModule
+    ],
+    providers: [
+        MessageService
+    ]
+})
+export class TicketsModule { }

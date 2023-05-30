@@ -1,0 +1,15 @@
+.ticket-item{
+  height: 300 px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & .ticket-title {
+    padding: 2px;
+  }
+
+  & img {
+    height: 200px;
+  }
+}

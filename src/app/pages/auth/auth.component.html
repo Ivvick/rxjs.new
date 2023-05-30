@@ -1,0 +1,20 @@
+<div class="d-flex">
+  <p-tabView>
+    <p-tabPanel [cache]="isTabCaching" header="Authorization">
+      <ng-template pTemplate="content">
+        <app-authorization
+          [inputProp]="textProp"
+          [inputObj]="someObj"
+        >
+        </app-authorization>
+      </ng-template>
+
+    </p-tabPanel>
+    <p-tabPanel header="Registration">
+      <app-registration></app-registration>
+    </p-tabPanel>
+
+  </p-tabView>
+
+</div>
+<p-toast position="top-right"></p-toast>

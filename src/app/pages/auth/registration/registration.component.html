@@ -1,0 +1,63 @@
+<div class="d-flex flex-column col-6 reg-input-wrap m-auto">
+    <div>
+        <span class="mx-3">Login</span>
+        <input type="text"
+               class="mb-3"
+               pInputText
+               [ngClass]="{'input-error': !login}"
+               [(ngModel)]="login"/>
+    </div>
+
+    <div>
+        <span class="mx-3">Password</span>
+        <input type="password"
+               class="mb-3"
+               pInputText
+               [ngClass]="{'input-error': !psw}"
+               [(ngModel)]="psw"/>
+    </div>
+
+    <div>
+        <span class="mx-3">Confirm password</span>
+        <input type="password"
+               class="mb-3"
+               pInputText
+               [ngClass]="{'input-error': !pswRepeat}"
+               [(ngModel)]="pswRepeat"/>
+    </div>
+
+    <div>
+        <span class="mx-3">Email</span>
+        <input type="text"
+               class="mb-3"
+               pInputText
+               [(ngModel)]="email"/>
+    </div>
+
+    <div *ngIf="showCardNumber; else noSelected">
+        <span class="mx-3">Card number</span>
+        <input type="text"
+               class="mb-3"
+               pInputText
+               [(ngModel)]="cardNumber"/>
+    </div>
+
+</div>
+
+<div class="mt-3 ">
+    <p-checkbox (onChange)="saveToLocal()"
+                name="groupname" [binary] = "true"
+                label="Save to local storage"
+                [(ngModel)]="selectedValue">
+    </p-checkbox>
+</div>
+
+<div class="mt-5 d-flex justify-content-center">
+    <button [disabled]="!login || !psw || !pswRepeat" (click)="registration($event )" type="button"
+            class="btn btn-success">Registration
+    </button>
+</div>
+
+<ng-template #noSelected>
+    <p>Invalid card</p>
+</ng-template>
